@@ -1,6 +1,7 @@
 package com.me.codility.launch;
 
 import com.me.codility.solutions.CountDiv;
+import com.me.codility.solutions.GenomicRangeQuery;
 import com.me.codility.solutions.MinAvgTwoSlice;
 import com.me.codility.solutions.PassingCars;
 
@@ -25,27 +26,43 @@ public class LaunchSolutions {
 		int[] array = {1, 0, 0, 1, 1, 1, 0, 0, 1};
 		System.out.println();
 		System.out.print("Given array of cars: ");
-		printCarArray(array);
+		printArray(array);
 		System.out.println("Number of passing cars: " + pc.countPassingCars(array));
 		
 		/**
 		 * Run a simple Minimum Average of a Slice program
 		 */
-		
 		MinAvgTwoSlice ms = new MinAvgTwoSlice();
 		int[] sliceArray = {4, 2, 2, 5, 1, 5, 8};
 		System.out.println();
 		System.out.print("Given array: ");
-		printCarArray(sliceArray);
+		printArray(sliceArray);
 		System.out.println("Starting index of minimum average slice: " + ms.findMinAvgSliceIndex(sliceArray));
+		
+		/**
+		 * Run a simple Genomic Range Query program
+		 */
+		GenomicRangeQuery grq = new GenomicRangeQuery();
+		String genes = "CAGCCTA";
+		int[] p = {2, 5, 0};
+		int[] q = {4, 5, 6};
+		System.out.println();
+		System.out.println("Given array of genes: " + genes);
+		System.out.print("P: ");
+		printArray(p);
+		System.out.print("Q: ");
+		printArray(q);
+		int[] genomicResult = grq.getGenomicRangeQuery(genes, p, q);
+		System.out.print("Result: ");
+		printArray(genomicResult);
 	}
 
-	private static void printCarArray(int[] cars) {
+	private static void printArray(int[] array) {
 		System.out.print("[");
 		
-		for (int i = 0; i < cars.length - 1; i++) {
-			System.out.print(cars[i] + ", ");
+		for (int i = 0; i < array.length - 1; i++) {
+			System.out.print(array[i] + ", ");
 		}
-		System.out.println(cars[cars.length - 1] + "]");
+		System.out.println(array[array.length - 1] + "]");
 	}
 }
