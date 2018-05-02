@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 public class Distinct {
 
-	public int findDistictElements(int[] array) {
-		if (array.length == 0)
+	public int findDistictElements(int[] A) {
+		if (A.length == 0)
 			return 0;
 
-		Arrays.sort(array);
-		int count = 0;
+		Arrays.sort(A);
+		int count = 1;
 
-		for (int i = 0; i < array.length - 1; i++) {
-			if (array[i] != array[i + 1]) {
+		for (int i = 0; i < A.length - 1; i++) {
+			if (A[i] != A[i + 1]) {
 				count++;
 			}
 		}
